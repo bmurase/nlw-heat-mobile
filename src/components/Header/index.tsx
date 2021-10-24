@@ -1,23 +1,30 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { styles } from './styles';
+
+import { UserPhoto } from '../UserPhoto';
+import { useAuth } from '../../hooks/auth';
 
 import LogoSvg from '../../assets/logo.svg';
-import { UserPhoto } from '../UserPhoto';
+
+import { styles } from './styles';
 
 export function Header() {
+  const { signOut, user } = useAuth();
+
   return (
     <View style={styles.container}>
       <LogoSvg />
       
       <View style={styles.logoutButton}>
-        <TouchableOpacity>
-          <Text style={styles.logoutText}>
-            Sair
-          </Text>
-        </TouchableOpacity>
+        { 
+          user && <TouchableOpacity onPress={signOut}>
+            <Text style={styles.logoutText}>
+              Sair
+            </Text>
+          </TouchableOpacity>
+        }
 
-        <UserPhoto imageUri='https://github.com/bmurase.png' />
+        <UserPhoto imageUri={user?.avatar_url} />
       </View>
     </View>
   )
