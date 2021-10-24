@@ -1,28 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { Header } from '../../components/Header';
 import { styles } from './styles';
 
 export function Home() {
   return (
     <View style={styles.container}>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
-      <Text>Hello NLW</Text>
+      <Header />
     </View>
   );
 }
